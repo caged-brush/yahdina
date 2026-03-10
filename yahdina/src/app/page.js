@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "@/component/Header";
 import Hero from "@/component/Hero";
+import Info from "@/component/Info";
 
 const page = () => {
   return (
@@ -9,6 +10,7 @@ const page = () => {
         <Hero />
         <Header />
       </section>
+      <Info />
     </main>
   );
 };
