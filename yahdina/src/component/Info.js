@@ -3,10 +3,11 @@ import React from "react";
 
 const Info = () => {
   return (
-    <>
-      <div className="grid grid-cols-2 gap-12 items-center bg-white">
+    <section className="bg-white">
+      {/* First block */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
         {/* Image side */}
-        <div className="relative flex-1 h-[850px] w-full overflow-hidden rounded-br-[120px]">
+        <div className="relative h-[320px] sm:h-[450px] md:h-[650px] lg:h-[850px] w-full overflow-hidden rounded-br-[60px] md:rounded-br-[120px]">
           <Image
             src="/images/lagos-ikoyi.jpg"
             alt="Lagos bridge"
@@ -16,8 +17,8 @@ const Info = () => {
         </div>
 
         {/* Text side */}
-        <div className="max-w-xl">
-          <p className="text-2xl leading-[1.5] text-gray-900">
+        <div className="px-6 sm:px-8 md:px-0 max-w-xl">
+          <p className="text-xl sm:text-2xl lg:text-3xl leading-[1.5] text-gray-900">
             <span className="font-bold">Yahdina Chambers</span> is a preeminent
             commercial law firm headquartered in Nigeria. It is celebrated for
             providing bespoke legal services and solutions to its numerous
@@ -28,9 +29,11 @@ const Info = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 bg-white gap-12 item-center ">
-        <div className="max-w-xl mt-56 ml-20">
-          <p className="text-2xl text-gray-900">
+      {/* Second block */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center mt-12 md:mt-0">
+        {/* Text side */}
+        <div className="order-2 md:order-1 px-6 sm:px-8 md:px-0 max-w-xl md:ml-20 md:mt-56">
+          <p className="text-xl sm:text-2xl lg:text-3xl leading-[1.5] text-gray-900">
             Our accomplished <span className="font-bold">legal team</span> has
             extensive international commercial transaction knowledge and
             practical experience in the dynamic Nigerian business landscape.
@@ -39,7 +42,9 @@ const Info = () => {
             spans diverse sectors.
           </p>
         </div>
-        <div className="relative flex-1 h-[850px] w-full overflow-hidden rounded-tl-[120px]">
+
+        {/* Image side */}
+        <div className="order-1 md:order-2 relative h-[320px] sm:h-[450px] md:h-[650px] lg:h-[850px] w-full overflow-hidden rounded-tl-[60px] md:rounded-tl-[120px]">
           <Image
             src="/images/ghetto.jpg"
             fill
@@ -48,7 +53,7 @@ const Info = () => {
           />
         </div>
       </div>
-    </>
+    </section>
   );
 };
 
