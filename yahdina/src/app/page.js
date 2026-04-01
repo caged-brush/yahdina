@@ -3,6 +3,7 @@ import Header from "@/component/Header";
 import Hero from "@/component/Hero";
 import Info from "@/component/Info";
 import PracticeArea from "@/component/PracticeArea";
+import Footer from "@/component/Footer";
 
 const page = () => {
   return (
@@ -13,6 +14,7 @@ const page = () => {
       </section>
       <Info />
       <PracticeArea />
+      <Footer />
     </main>
   );
 };
