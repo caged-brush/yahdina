@@ -1,11 +1,34 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const container = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
 
 const Footer = () => {
   return (
     <footer className="bg-[#e7e7e7] px-6 py-16 md:px-12 lg:px-16">
-      <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-3">
+      <motion.div
+        className="mx-auto grid max-w-7xl gap-12 md:grid-cols-3"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={container}
+      >
         {/* Left */}
-        <div>
+        <motion.div variants={fadeUp} transition={{ duration: 0.6 }}>
           <h2 className="text-3xl font-light tracking-[-0.02em] text-black md:text-4xl">
             Yahdina Chambers
           </h2>
@@ -16,10 +39,10 @@ const Footer = () => {
               Squarespace
             </span>
           </p>
-        </div>
+        </motion.div>
 
         {/* Middle */}
-        <div>
+        <motion.div variants={fadeUp} transition={{ duration: 0.6 }}>
           <h3 className="text-2xl font-light text-black">Location</h3>
 
           <p className="mt-6 text-lg leading-relaxed text-black/80">
@@ -29,10 +52,10 @@ const Footer = () => {
             <br />
             Nigeria
           </p>
-        </div>
+        </motion.div>
 
         {/* Right */}
-        <div>
+        <motion.div variants={fadeUp} transition={{ duration: 0.6 }}>
           <h3 className="text-2xl font-light text-black">Contact</h3>
 
           <p className="mt-6 text-lg leading-relaxed text-black/80">
@@ -40,8 +63,8 @@ const Footer = () => {
             <br />
             +(234)-802-367-6043
           </p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </footer>
   );
 };

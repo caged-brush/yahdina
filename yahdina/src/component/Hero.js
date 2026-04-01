@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
@@ -15,19 +17,47 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 flex min-h-screen items-center">
         <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 md:px-10">
-          <div className="max-w-3xl">
-            <h1 className="text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-light leading-[1]">
+          <motion.div
+            className="max-w-3xl"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.2,
+                },
+              },
+            }}
+          >
+            {/* Heading */}
+            <motion.h1
+              className="text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-light leading-[1]"
+              variants={{
+                hidden: { opacity: 0, y: 40 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               Your Legal
               <br />
               Success begins
               <br />
               here.
-            </h1>
+            </motion.h1>
 
-            <button className="mt-6 sm:mt-8 rounded-full border border-white px-6 py-3 sm:px-8 sm:py-4 text-white text-base sm:text-lg md:text-2xl font-light transition hover:bg-white hover:text-black">
+            {/* Button */}
+            <motion.button
+              className="mt-6 sm:mt-8 rounded-full border border-white px-6 py-3 sm:px-8 sm:py-4 text-white text-base sm:text-lg md:text-2xl font-light transition hover:bg-white hover:text-black"
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
               Book Your Consultation
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </div>
       </div>
     </section>
