@@ -17,7 +17,7 @@ const Header = () => {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8 lg:gap-10 text-white text-base lg:text-lg font-light">
-          <a href="#about" className="transition hover:opacity-80">
+          <a href="/about" className="transition hover:opacity-80">
             About
           </a>
           <a href="#practice" className="transition hover:opacity-80">
