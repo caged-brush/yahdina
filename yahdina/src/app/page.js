@@ -5,13 +5,11 @@ import Info from "@/component/Info";
 import PracticeArea from "@/component/PracticeArea";
 import Footer from "@/component/Footer";
 
-const page = () => {
+const Page = () => {
   return (
     <main>
-      <section className="relative h-screen w-full overflow-hidden">
-        <Hero />
-        <Header />
-      </section>
+      <Header hasHero />
+      <Hero />
       <Info />
       <PracticeArea />
       <Footer />
@@ -19,4 +17,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

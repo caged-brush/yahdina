@@ -1,55 +1,98 @@
 "use client";
-import React, { useState } from "react";
 
-const Header = () => {
+import React, { useEffect, useState } from "react";
+
+const Header = ({ hasHero = false }) => {
   const [open, setOpen] = useState(false);
+  const [isOverHero, setIsOverHero] = useState(true);
+
+  useEffect(() => {
+    if (!hasHero) return;
+
+    const handleScroll = () => {
+      const heroHeight = window.innerHeight;
+      setIsOverHero(window.scrollY < heroHeight - 100);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [hasHero]);
+
+  const transparentMode = hasHero && isOverHero;
 
   return (
-    <header className="absolute top-0 left-0 z-50 w-full bg-white/10 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 md:px-10 py-4 md:py-6">
-        {/* Logo */}
+    <header
+      className={`fixed top-0 left-0 z-[100] w-full transition-all duration-300 ${
+        transparentMode
+          ? "bg-transparent text-white"
+          : "bg-white text-black shadow-sm"
+      }`}
+    >
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10 md:py-6">
         <a
           href="/"
-          className="text-white text-lg md:text-2xl font-light tracking-wide"
+          className={`text-lg font-light tracking-wide md:text-2xl ${
+            transparentMode ? "text-white" : "text-black"
+          }`}
         >
           Yahdina Chambers
         </a>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8 lg:gap-10 text-white text-base lg:text-lg font-light">
-          <a href="/about" className="transition hover:opacity-80">
+        <nav
+          className={`hidden items-center gap-8 text-base font-light md:flex lg:gap-10 lg:text-lg ${
+            transparentMode ? "text-white" : "text-black"
+          }`}
+        >
+          <a href="/about" className="transition hover:opacity-70">
             About
           </a>
-          <a href="#practice" className="transition hover:opacity-80">
+          <a href="#practice" className="transition hover:opacity-70">
             Practice Areas
           </a>
-          <a href="#services" className="transition hover:opacity-80">
+          <a href="#services" className="transition hover:opacity-70">
             Services
           </a>
-          <a href="#contact" className="transition hover:opacity-80">
+          <a href="#contact" className="transition hover:opacity-70">
             Contact
           </a>
         </nav>
 
-        {/* Mobile Menu Button */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-white"
+          className={`md:hidden ${transparentMode ? "text-white" : "text-black"}`}
           aria-label="Toggle menu"
         >
           <div className="space-y-1.5">
-            <span className="block h-0.5 w-6 bg-white"></span>
-            <span className="block h-0.5 w-6 bg-white"></span>
-            <span className="block h-0.5 w-6 bg-white"></span>
+            <span
+              className={`block h-0.5 w-6 ${
+                transparentMode ? "bg-white" : "bg-black"
+              }`}
+            />
+            <span
+              className={`block h-0.5 w-6 ${
+                transparentMode ? "bg-white" : "bg-black"
+              }`}
+            />
+            <span
+              className={`block h-0.5 w-6 ${
+                transparentMode ? "bg-white" : "bg-black"
+              }`}
+            />
           </div>
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden bg-black/70 backdrop-blur-lg">
-          <nav className="flex flex-col gap-6 px-6 py-6 text-white text-lg font-light">
-            <a href="#about" onClick={() => setOpen(false)}>
+        <div
+          className={`md:hidden ${
+            transparentMode
+              ? "bg-black/40 backdrop-blur-md text-white"
+              : "bg-white text-black"
+          }`}
+        >
+          <nav className="flex flex-col gap-6 px-6 py-6 text-lg font-light">
+            <a href="/about" onClick={() => setOpen(false)}>
               About
             </a>
             <a href="#practice" onClick={() => setOpen(false)}>
