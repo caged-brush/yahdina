@@ -33,11 +33,8 @@ const Footer = () => {
             Yahdina Chambers
           </h2>
 
-          <p className="mt-6 text-lg text-black/80">
-            Made with{" "}
-            <span className="underline underline-offset-4 cursor-pointer">
-              Squarespace
-            </span>
+          <p className="mt-6 text-sm text-black/70">
+            © {new Date().getFullYear()} Yahdina Chambers. All rights reserved.
           </p>
         </motion.div>
 
