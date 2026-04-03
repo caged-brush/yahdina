@@ -4,6 +4,7 @@ import Header from "@/component/Header";
 import Footer from "@/component/Footer";
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 const Page = () => {
@@ -96,9 +97,11 @@ const Page = () => {
               Schedule your appointment
             </h2>
 
-            <button className="mt-8 rounded-full border border-black px-10 py-4 text-[16px] font-light text-black transition hover:bg-black hover:text-white">
-              Book now
-            </button>
+            <Link href="/contact">
+              <button className="mt-8 rounded-full border border-black px-10 py-4 text-[16px] font-light text-black transition hover:bg-black hover:text-white">
+                Book now
+              </button>
+            </Link>
           </motion.div>
         </section>
       </main>

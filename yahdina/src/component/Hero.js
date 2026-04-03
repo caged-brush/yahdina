@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -47,16 +48,18 @@ const Hero = () => {
             </motion.h1>
 
             {/* Button */}
-            <motion.button
-              className="mt-6 sm:mt-8 rounded-full border border-white px-6 py-3 sm:px-8 sm:py-4 text-white text-base sm:text-lg md:text-2xl font-light transition hover:bg-white hover:text-black"
-              variants={{
-                hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-            >
-              Book Your Consultation
-            </motion.button>
+            <Link href="/contact">
+              <motion.button
+                className="mt-6 sm:mt-8 rounded-full border border-white px-6 py-3 sm:px-8 sm:py-4 text-white text-base sm:text-lg md:text-2xl font-light transition hover:bg-white hover:text-black"
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+              >
+                Book Your Consultation
+              </motion.button>
+            </Link>
           </motion.div>
         </div>
       </div>
