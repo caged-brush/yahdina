@@ -23,9 +23,9 @@ const Header = ({ hasHero = false }) => {
 
   return (
     <header
-      className={`fixed sticky top-0 left-0 z-[100] w-full transition-all duration-300 ${
+      className={`fixed top-0 left-0 z-[100] w-full transition-all duration-300 ${
         transparentMode
-          ? "bg-transparent text-white"
+          ? "bg-black/12 text-white border-b border-white/10"
           : "bg-white text-black shadow-sm"
       }`}
     >
@@ -53,7 +53,7 @@ const Header = ({ hasHero = false }) => {
           <a href="/services" className="transition hover:opacity-70">
             Services
           </a>
-          <a href="#contact" className="transition hover:opacity-70">
+          <a href="/contact" className="transition hover:opacity-70">
             Contact
           </a>
         </nav>
@@ -98,10 +98,10 @@ const Header = ({ hasHero = false }) => {
             <a href="/practiceArea" onClick={() => setOpen(false)}>
               Practice Areas
             </a>
-            <a href="#services" onClick={() => setOpen(false)}>
+            <a href="/services" onClick={() => setOpen(false)}>
               Services
             </a>
-            <a href="#contact" onClick={() => setOpen(false)}>
+            <a href="/contact" onClick={() => setOpen(false)}>
               Contact
             </a>
           </nav>

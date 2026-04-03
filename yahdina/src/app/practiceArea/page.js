@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "@/component/Header";
 import Footer from "@/component/Footer";
+import Image from "next/image";
 
 const Page = () => {
   const columns = [
@@ -49,9 +50,23 @@ const Page = () => {
 
   return (
     <main className="min-h-screen bg-[#f3f3f3] text-black">
-      <Header />
+      <Header hasHero />
 
-      <section className="mx-auto max-w-[1320px] px-6 pb-24 pt-[150px] md:px-10 lg:px-16">
+      {/* Hero */}
+      <section className="relative h-[330px] w-full overflow-hidden md:h-[360px]">
+        <Image
+          src="/images/shelve.jpg"
+          alt="Library shelves"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/45" />
+      </section>
+
+      {/* Content */}
+      <section className="mx-auto max-w-[1320px] px-6 pb-24 pt-16 md:px-10 md:pt-20 lg:px-16">
         <div className="grid grid-cols-1 gap-x-[44px] gap-y-0 md:grid-cols-2 lg:grid-cols-3">
           {columns.map((column, colIndex) => (
             <div key={colIndex} className="flex flex-col gap-[92px]">
