@@ -19,7 +19,7 @@ const container = {
 
 const Footer = () => {
   return (
-    <footer className="bg-[#e7e7e7] px-6 py-16 md:px-12 lg:px-16">
+    <footer className="bg-[#cbc9c9] px-6 py-16 md:px-12 lg:px-16">
       <motion.div
         className="mx-auto grid max-w-7xl gap-12 md:grid-cols-3"
         initial="hidden"

@@ -23,7 +23,7 @@ const Header = ({ hasHero = false }) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 z-[100] w-full transition-all duration-300 ${
+      className={`fixed sticky top-0 left-0 z-[100] w-full transition-all duration-300 ${
         transparentMode
           ? "bg-transparent text-white"
           : "bg-white text-black shadow-sm"
@@ -47,10 +47,10 @@ const Header = ({ hasHero = false }) => {
           <a href="/about" className="transition hover:opacity-70">
             About
           </a>
-          <a href="#practice" className="transition hover:opacity-70">
+          <a href="/practiceArea" className="transition hover:opacity-70">
             Practice Areas
           </a>
-          <a href="#services" className="transition hover:opacity-70">
+          <a href="/services" className="transition hover:opacity-70">
             Services
           </a>
           <a href="#contact" className="transition hover:opacity-70">
@@ -95,7 +95,7 @@ const Header = ({ hasHero = false }) => {
             <a href="/about" onClick={() => setOpen(false)}>
               About
             </a>
-            <a href="#practice" onClick={() => setOpen(false)}>
+            <a href="/practiceArea" onClick={() => setOpen(false)}>
               Practice Areas
             </a>
             <a href="#services" onClick={() => setOpen(false)}>
