@@ -40,7 +40,7 @@ const Hero = () => {
               }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              Rashika Legal
+              Your Legal
               <br />
               Success begins
               <br />
